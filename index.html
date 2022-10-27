@@ -1,0 +1,273 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+</head>
+
+<style>
+body {
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  width: 330px;
+  margin: auto;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+.button {
+  padding: 1rem;
+  color: white;
+  background: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0 0 2rem;
+}
+
+.hide {
+  display: none;
+}
+
+.emoji-choices {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+
+  .emoji-choices {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+
+  .choice {
+    width: 20vw;
+    margin-top: 1rem;
+  }
+
+.emoji {
+  font-size: 1.5rem;
+  transition: font-size 300ms ease;
+  cursor: pointer;
+  margin: 0;
+}
+
+.emoji-selected {
+  font-size: 2rem;
+}
+
+.reaction {
+  font-size: .8rem;
+  opacity: 0;
+}
+
+.reaction-fade-in {
+  -webkit-animation: fadeIn 300ms ease;
+          animation: fadeIn 300ms ease;
+  opacity: 1;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.question {
+  margin-top: 1rem;
+  font-size: .6em;
+}
+
+.summary {
+  text-align: center;
+  margin: auto;
+  max-width: 330px;
+}
+  
+</style>  
+
+
+<body>
+
+
+<!-- Q1-->
+<div id="question-1">
+  <div class="question">
+    <h1>Question #1: How was your overall experience?</h1>
+  </div>
+  <ul class="emoji-choices">
+    <li class="choice" data-value="5">
+      <p class="emoji"><i class="em em-heart_eyes"></i></p>
+      <p class="reaction">I can't wait to tell everyone I know about this!</p>
+    </li>
+    <li class="choice" data-value="4">
+      <p class="emoji"><i class="em em-smile"></i></p>
+      <p class="reaction">Thanks! I really enjoyed it.</p>
+    </li>
+    <li class="choice" data-value="3">
+      <p class="emoji"><i class="em em-neutral_face"></i></p>
+      <p class="reaction">Meh. I could take it or leave it</p>
+    </li>
+    <li class="choice" data-value="2">
+      <p class="emoji"><i class="em em-disappointed"></i></p>
+      <p class="reaction">I had such high hopes, but ultimately it was disappointing</p>
+    </li>
+    <li class="choice" data-value="1">
+      <p class="emoji"><i class="em em-angry"></i></p>
+      <p class="reaction">I can't believe I wasted money on this!</p>
+    </li>
+  </ul><a class="answer-submit button" href="#">Submit Answer</a>
+</div>
+<!-- Q2-->
+<div class="hide" id="question-2">
+  <div class="question">
+    <h1>Question #2: How was our customer service?</h1>
+  </div>
+  <ul class="emoji-choices">
+    <li class="choice" data-value="5">
+      <p class="emoji"><i class="em em-heart_eyes"></i></p>
+      <p class="reaction">You had me at, "Hello."</p>
+    </li>
+    <li class="choice" data-value="4">
+      <p class="emoji"><i class="em em-smile"></i></p>
+      <p class="reaction">I felt like I was being well taken care of.</p>
+    </li>
+    <li class="choice" data-value="3">
+      <p class="emoji"><i class="em em-neutral_face"></i></p>
+      <p class="reaction">The agent was efficient and solved my problem (mostly).</p>
+    </li>
+    <li class="choice" data-value="2">
+      <p class="emoji"><i class="em em-disappointed"></i></p>
+      <p class="reaction">We eventually figured it out, but it took a lot longer than it should have.</p>
+    </li>
+    <li class="choice" data-value="1">
+      <p class="emoji"><i class="em em-angry"></i></p>
+      <p class="reaction">You need to hire a new agent. The experience was terrible.</p>
+    </li>
+  </ul><a class="answer-submit button" href="#">Submit Answer</a>
+</div>
+<!-- Q3-->
+<div class="hide" id="question-3">
+  <div class="question">
+    <h1>Question #3: Was the product what you expected?</h1>
+  </div>
+  <ul class="emoji-choices">
+    <li class="choice" data-value="5">
+      <p class="emoji"><i class="em em-heart_eyes"></i></p>
+      <p class="reaction">It was so much better than I could have hoped!</p>
+    </li>
+    <li class="choice" data-value="4">
+      <p class="emoji"><i class="em em-smile"></i></p>
+      <p class="reaction">It met my expectations and more.</p>
+    </li>
+    <li class="choice" data-value="3">
+      <p class="emoji"><i class="em em-neutral_face"></i></p>
+      <p class="reaction">Solid. Exactly what I expected.</p>
+    </li>
+    <li class="choice" data-value="2">
+      <p class="emoji"><i class="em em-disappointed"></i></p>
+      <p class="reaction">It wasn't as awesome as I hoped. A little disappointed.</p>
+    </li>
+    <li class="choice" data-value="1">
+      <p class="emoji"><i class="em em-angry"></i></p>
+      <p class="reaction">Honestly, it's a piece of garbage.</p>
+    </li>
+  </ul><a class="answer-submit button" href="#">Submit Answer</a>
+  <!-- Thank you-->
+</div>
+<div class="summary hide">
+  <h2>Thanks for taking our survey! Your feedback helps us make better products.</h2>
+  <h3 class="hide" id="amazing">We are SO happy that you enjoyed your experience with our product! Please share it with everyone you know!</h3>
+  <h3 class="hide" id="good">It sounds like your experience with our product was pretty good. Thank you for using it and helping us to make it better. Please consider sharing it with your friends.</h3>
+  <h3 class="hide" id="okay">Thank you for trying out our product. We're always trying to get better. Your survey answers will help us better serve you in the future. We hope you'll consider sharing our product with others. </h3>
+  <h3 class="hide" id="disappointing">We're really bummed that your experience with our product wasn't what you though it would be. Thank you for sharing your experience with us. Your answers will help us a take a look at how we can improve our product.</h3>
+  <h3 class="hide" id="terrible">We're sorry that you had such a terrible experience with our product. As hard as it is to swallow a bitter pill, we appreciate your feedback and will look into how we can improve the areas you shared with us. We're always improving and hope you'll give our product another try in the future.</h3>
+</div>  
+  
+</body>  
+
+
+<script>
+
+$(".choice").on("click", function () {
+  var $this = $(this);
+
+  $(".reaction").removeClass("reaction-fade-in");
+  $(".emoji").removeClass("emoji-selected");
+  $this.find(".reaction").addClass("reaction-fade-in");
+  $this.find(".emoji").addClass("emoji-selected");
+});
+
+$("#question-1 .choice").on("click", function () {
+  var ranking1 = $(this).attr("data-value");
+
+  $(".answer-submit").on("click", function () {
+    sessionStorage.setItem("ranking1", ranking1);
+    $("#question-2").removeClass("hide");
+    $("#question-1").addClass("hide");
+  });
+});
+
+$("#question-2 .choice").on("click", function () {
+  var ranking2 = $(this).attr("data-value");
+
+  $(".answer-submit").on("click", function () {
+    sessionStorage.setItem("ranking2", ranking2);
+    $("#question-3").removeClass("hide");
+    $("#question-2").addClass("hide");
+  });
+});
+
+$("#question-3 .choice").on("click", function () {
+  var ranking3 = $(this).attr("data-value");
+
+  $(".answer-submit").on("click", function () {
+    sessionStorage.setItem("ranking3", ranking3);
+    $("#question-3").addClass("hide");
+    $(".summary").removeClass("hide");
+
+    var total;
+
+    function calculateTotal() {
+      var ranking1 = sessionStorage.getItem("ranking1");
+      var ranking2 = sessionStorage.getItem("ranking2");
+      var ranking3 = sessionStorage.getItem("ranking3");
+      var total = parseInt(ranking1) + parseInt(ranking2) + parseInt(ranking3);
+
+      if (total >= 14) {
+        $("#amazing").removeClass("hide");
+      } else if (total < 14 && total > 10) {
+        $("#good").removeClass("hide");
+      } else if (total < 11 && total > 7) {
+        $("#okay").removeClass("hide");
+      } else if (total < 8 && total > 4) {
+        $("#disappointing").removeClass("hide");
+      } else {
+        $("#terrible").removeClass("hide");
+      }
+    }
+
+    // if (total > 13) {
+    //   $('#amazing').removeClass('hide');
+    // }
+
+    calculateTotal();
+  });
+});
+
+</script>  
